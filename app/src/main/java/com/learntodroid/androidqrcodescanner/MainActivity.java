@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.common.util.concurrent.ListenableFuture;
+import com.learntodroid.androidqrcodescanner.model.Device;
 
 import java.util.concurrent.ExecutionException;
 
@@ -31,8 +32,9 @@ public class MainActivity extends AppCompatActivity {
     private PreviewView previewView;
     private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
 
-    private Button qrCodeFoundButton;
+    private Button qrCodeFoundButton,add_device;
     private String qrCode;
+    Device device ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         previewView = findViewById(R.id.activity_main_previewView);
+        add_device = findViewById(R.id.add_device);
+
+        device =new Device();
+        add_device.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(qrCode != null){
+                    device.setCodeQR(qrCode);
+                }
+                else
+                {
+                    Toast.makeText(MainActivity.this,"No QR code detected",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
         qrCodeFoundButton = findViewById(R.id.activity_main_qrCodeFoundButton);
         qrCodeFoundButton.setVisibility(View.INVISIBLE);

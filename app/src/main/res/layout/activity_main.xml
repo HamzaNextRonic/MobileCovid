@@ -19,12 +19,24 @@
         android:layout_height="wrap_content">
     <Button
         android:id="@+id/activity_main_qrCodeFoundButton"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:background="@color/clr_main"
+        android:textColor="#fff"
         android:text="QR Code Found"
+        android:layout_marginLeft="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/activity_main_previewView"
-        app:layout_constraintEnd_toEndOf="50"
-        app:layout_constraintStart_toStartOf="" />
+        app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:id="@+id/add_device"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@color/clr_main"
+        android:textColor="#fff"
+        android:text="Add QRCode"
+        android:layout_marginLeft="200dp"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_main_previewView"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

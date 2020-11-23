@@ -45,4 +45,8 @@ dependencies {
 
     // qrcode reader
     implementation 'com.google.zxing:core:3.3.0'
+
+    //authentication dependencys
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.google.code.gson:gson:2.4'
 }
