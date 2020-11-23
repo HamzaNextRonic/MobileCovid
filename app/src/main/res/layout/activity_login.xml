@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp"
+        android:paddingTop="30dp"
+        android:gravity="center">
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:src="@drawable/applogo"
+
+            />
+        <TextView
+            android:id="@+id/login_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login to your Account"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/log_edit_text"
+            android:layout_marginTop="20sp"
+            android:hint="email@example.example"
+            android:paddingLeft="15sp"
+            android:inputType="textEmailAddress"/>
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/log_edit_text"
+            android:layout_marginTop="20sp"
+            android:hint="password"
+            android:paddingLeft="15sp"
+            android:inputType="textPassword"/>
+        <Button
+            android:id="@+id/signIn_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_btn"
+            android:layout_marginTop="40dp"
+            android:text="Sign In"
+            android:textSize="16dp"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
