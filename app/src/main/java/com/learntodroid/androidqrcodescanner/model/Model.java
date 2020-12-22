@@ -1,6 +1,7 @@
 package com.learntodroid.androidqrcodescanner.model;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.learntodroid.androidqrcodescanner.interfaces.API;
 
@@ -10,6 +11,7 @@ public class Model {
     private static Model sInstance = null;
     private final API mApi;
     private User mUser;
+    private Context context;
 
 
     public static Model getInstance(Application application){

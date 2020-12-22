@@ -2,10 +2,10 @@ package com.learntodroid.androidqrcodescanner;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.camera.core.Camera;
 import androidx.camera.core.CameraSelector;
 import androidx.camera.core.ImageAnalysis;
 import androidx.camera.core.Preview;
+import androidx.camera.core.Camera;
 import androidx.camera.lifecycle.ProcessCameraProvider;
 import androidx.camera.view.PreviewView;
 import androidx.core.app.ActivityCompat;
@@ -14,16 +14,15 @@ import androidx.lifecycle.LifecycleOwner;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Size;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
 import com.google.common.util.concurrent.ListenableFuture;
 import com.learntodroid.androidqrcodescanner.model.Device;
-
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,10 +31,11 @@ public class MainActivity extends AppCompatActivity {
     private PreviewView previewView;
     private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
 
+
     private Button qrCodeFoundButton,add_device;
     private String qrCode;
     Device device ;
-
+    //private ZoomControls zooming;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
         previewView = findViewById(R.id.activity_main_previewView);
         add_device = findViewById(R.id.add_device);
+
+
 
         device =new Device();
         add_device.setOnClickListener(new View.OnClickListener() {
@@ -96,14 +98,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startCamera() {
+
         cameraProviderFuture.addListener(() -> {
             try {
+
                 ProcessCameraProvider cameraProvider = cameraProviderFuture.get();
                 bindCameraPreview(cameraProvider);
             } catch (ExecutionException | InterruptedException e) {
                 Toast.makeText(this, "Error starting camera " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }, ContextCompat.getMainExecutor(this));
+
     }
 
     private void bindCameraPreview(@NonNull ProcessCameraProvider cameraProvider) {
@@ -138,9 +143,11 @@ public class MainActivity extends AppCompatActivity {
         }));
 
         Camera camera = cameraProvider.bindToLifecycle((LifecycleOwner)this, cameraSelector, imageAnalysis, preview);
+//        Camera.Parameters parameters = camera.getParameters();
+//        parameters.setZoom(zoomFactorValue);
+//        camera.setParameters(parameters);
+
     }
-
-
 
 
 

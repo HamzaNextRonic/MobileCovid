@@ -12,8 +12,7 @@ import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
 
-    LinearLayout add_device ,event_device;
-    CardView card1,card2,card3,card4,card5,card6;
+    private CardView card1,card2,card3,card4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +24,7 @@ public class HomeActivity extends AppCompatActivity {
         card1 = findViewById(R.id.card1);
         card3 = findViewById(R.id.card3);
         card4 = findViewById(R.id.card4);
-        card5 = findViewById(R.id.card5);
-        card6 = findViewById(R.id.card6);
+
 
 
 
@@ -47,13 +45,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        card6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(HomeActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
       /*  add_device.setOnClickListener(new View.OnClickListener() {
             @Override
